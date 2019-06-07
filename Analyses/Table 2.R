@@ -239,7 +239,8 @@ num5565prepdenom <- length(which(artnet2$age.cat == "55-65" &
 
 # Summary Table ---------------
 # Column 1 - Overall, row %
-respondents <- rbind(nrow(artnet2),
+respondents <- rbind(paste0(num, " (",
+                            round(100 * num / num, 1), ")"),
                      paste0(numwhite, " (",
                             round(100 * numwhite / num, 1), ")"),
                      paste0(numblack, " (",
