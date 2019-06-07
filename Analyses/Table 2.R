@@ -36,71 +36,127 @@ num5565 <- length(which(artnet2$age.cat == "55-65"))
 
 # Column 2 - adult
 numadult <- length(which(artnet2$prep_adult == 1))
-numwhiteadult <- length(which(artnet2$race.cat == "white" & artnet2$prep_adult == 1))
-numblackadult <- length(which(artnet2$race.cat == "black" & artnet2$prep_adult == 1))
-numhispadult <- length(which(artnet2$race.cat == "hispanic" & artnet2$prep_adult == 1))
-numotheradult <- length(which(artnet2$race.cat == "other" & artnet2$prep_adult == 1))
-numneadult <- length(which(artnet2$region == "Northeast" & artnet2$prep_adult == 1))
-nummwadult <- length(which(artnet2$region == "Midwest" & artnet2$prep_adult == 1))
-numsouthadult <- length(which(artnet2$region == "South" & artnet2$prep_adult == 1))
-numwestadult <- length(which(artnet2$region == "West" & artnet2$prep_adult == 1))
-num1517adult <- length(which(artnet2$age.cat == "15-17" & artnet2$prep_adult == 1))
-num1824adult <- length(which(artnet2$age.cat == "18-24" & artnet2$prep_adult == 1))
-num2534adult <- length(which(artnet2$age.cat == "25-34" & artnet2$prep_adult == 1))
-num3544adult <- length(which(artnet2$age.cat == "35-44" & artnet2$prep_adult == 1))
-num4554adult <- length(which(artnet2$age.cat == "45-54" & artnet2$prep_adult == 1))
-num5565adult <- length(which(artnet2$age.cat == "55-65" & artnet2$prep_adult == 1))
+numwhiteadult <- length(which(artnet2$race.cat == "white" &
+                                artnet2$prep_adult == 1))
+numblackadult <- length(which(artnet2$race.cat == "black" &
+                                artnet2$prep_adult == 1))
+numhispadult <- length(which(artnet2$race.cat == "hispanic" &
+                               artnet2$prep_adult == 1))
+numotheradult <- length(which(artnet2$race.cat == "other" &
+                                artnet2$prep_adult == 1))
+numneadult <- length(which(artnet2$region == "Northeast" &
+                             artnet2$prep_adult == 1))
+nummwadult <- length(which(artnet2$region == "Midwest" &
+                             artnet2$prep_adult == 1))
+numsouthadult <- length(which(artnet2$region == "South" &
+                                artnet2$prep_adult == 1))
+numwestadult <- length(which(artnet2$region == "West" &
+                               artnet2$prep_adult == 1))
+num1517adult <- length(which(artnet2$age.cat == "15-17" &
+                               artnet2$prep_adult == 1))
+num1824adult <- length(which(artnet2$age.cat == "18-24" &
+                               artnet2$prep_adult == 1))
+num2534adult <- length(which(artnet2$age.cat == "25-34" &
+                               artnet2$prep_adult == 1))
+num3544adult <- length(which(artnet2$age.cat == "35-44" &
+                               artnet2$prep_adult == 1))
+num4554adult <- length(which(artnet2$age.cat == "45-54" &
+                               artnet2$prep_adult == 1))
+num5565adult <- length(which(artnet2$age.cat == "55-65" &
+                               artnet2$prep_adult == 1))
 
 # Column 3 - HIV-neg
 numhivneg <- length(which(artnet2$prep_hiv == 1))
-numwhitehivneg <- length(which(artnet2$race.cat == "white" & artnet2$prep_hiv == 1))
-numblackhivneg <- length(which(artnet2$race.cat == "black" & artnet2$prep_hiv == 1))
-numhisphivneg <- length(which(artnet2$race.cat == "hispanic" & artnet2$prep_hiv == 1))
-numotherhivneg <- length(which(artnet2$race.cat == "other" & artnet2$prep_hiv == 1))
-numnehivneg <- length(which(artnet2$region == "Northeast" & artnet2$prep_hiv == 1))
-nummwhivneg <- length(which(artnet2$region == "Midwest" & artnet2$prep_hiv == 1))
-numsouthhivneg <- length(which(artnet2$region == "South" & artnet2$prep_hiv == 1))
-numwesthivneg <- length(which(artnet2$region == "West" & artnet2$prep_hiv == 1))
-num1517hivneg <- length(which(artnet2$age.cat == "15-17" & artnet2$prep_hiv == 1))
-num1824hivneg <- length(which(artnet2$age.cat == "18-24" & artnet2$prep_hiv == 1))
-num2534hivneg <- length(which(artnet2$age.cat == "25-34" & artnet2$prep_hiv == 1))
-num3544hivneg <- length(which(artnet2$age.cat == "35-44" & artnet2$prep_hiv == 1))
-num4554hivneg <- length(which(artnet2$age.cat == "45-54" & artnet2$prep_hiv == 1))
-num5565hivneg <- length(which(artnet2$age.cat == "55-65" & artnet2$prep_hiv == 1))
+numwhitehivneg <- length(which(artnet2$race.cat == "white" &
+                                 artnet2$prep_hiv == 1))
+numblackhivneg <- length(which(artnet2$race.cat == "black" &
+                                 artnet2$prep_hiv == 1))
+numhisphivneg <- length(which(artnet2$race.cat == "hispanic" &
+                                artnet2$prep_hiv == 1))
+numotherhivneg <- length(which(artnet2$race.cat == "other" &
+                                 artnet2$prep_hiv == 1))
+numnehivneg <- length(which(artnet2$region == "Northeast" &
+                              artnet2$prep_hiv == 1))
+nummwhivneg <- length(which(artnet2$region == "Midwest" &
+                              artnet2$prep_hiv == 1))
+numsouthhivneg <- length(which(artnet2$region == "South" &
+                                 artnet2$prep_hiv == 1))
+numwesthivneg <- length(which(artnet2$region == "West" &
+                                artnet2$prep_hiv == 1))
+num1517hivneg <- length(which(artnet2$age.cat == "15-17" &
+                                artnet2$prep_hiv == 1))
+num1824hivneg <- length(which(artnet2$age.cat == "18-24" &
+                                artnet2$prep_hiv == 1))
+num2534hivneg <- length(which(artnet2$age.cat == "25-34" &
+                                artnet2$prep_hiv == 1))
+num3544hivneg <- length(which(artnet2$age.cat == "35-44" &
+                                artnet2$prep_hiv == 1))
+num4554hivneg <- length(which(artnet2$age.cat == "45-54" &
+                                artnet2$prep_hiv == 1))
+num5565hivneg <- length(which(artnet2$age.cat == "55-65" &
+                                artnet2$prep_hiv == 1))
 
 # Column 4 - Male partner in last 6 months
 nump6mo <- length(which(artnet2$prep_part6mo == 1))
-numwhitep6mo <- length(which(artnet2$race.cat == "white" & artnet2$prep_part6mo == 1))
-numblackp6mo <- length(which(artnet2$race.cat == "black" & artnet2$prep_part6mo == 1))
-numhispp6mo <- length(which(artnet2$race.cat == "hispanic" & artnet2$prep_part6mo == 1))
-numotherp6mo <- length(which(artnet2$race.cat == "other" & artnet2$prep_part6mo == 1))
-numnep6mo <- length(which(artnet2$region == "Northeast" & artnet2$prep_part6mo == 1))
-nummwp6mo <- length(which(artnet2$region == "Midwest" & artnet2$prep_part6mo == 1))
-numsouthp6mo <- length(which(artnet2$region == "South" & artnet2$prep_part6mo == 1))
-numwestp6mo <- length(which(artnet2$region == "West" & artnet2$prep_part6mo == 1))
-num1517p6mo <- length(which(artnet2$age.cat == "15-17" & artnet2$prep_part6mo == 1))
-num1824p6mo <- length(which(artnet2$age.cat == "18-24" & artnet2$prep_part6mo == 1))
-num2534p6mo <- length(which(artnet2$age.cat == "25-34" & artnet2$prep_part6mo == 1))
-num3544p6mo <- length(which(artnet2$age.cat == "35-44" & artnet2$prep_part6mo == 1))
-num4554p6mo <- length(which(artnet2$age.cat == "45-54" & artnet2$prep_part6mo == 1))
-num5565p6mo <- length(which(artnet2$age.cat == "55-65" & artnet2$prep_part6mo == 1))
+numwhitep6mo <- length(which(artnet2$race.cat == "white" &
+                               artnet2$prep_part6mo == 1))
+numblackp6mo <- length(which(artnet2$race.cat == "black" &
+                               artnet2$prep_part6mo == 1))
+numhispp6mo <- length(which(artnet2$race.cat == "hispanic" &
+                              artnet2$prep_part6mo == 1))
+numotherp6mo <- length(which(artnet2$race.cat == "other" &
+                               artnet2$prep_part6mo == 1))
+numnep6mo <- length(which(artnet2$region == "Northeast" &
+                            artnet2$prep_part6mo == 1))
+nummwp6mo <- length(which(artnet2$region == "Midwest" &
+                            artnet2$prep_part6mo == 1))
+numsouthp6mo <- length(which(artnet2$region == "South" &
+                               artnet2$prep_part6mo == 1))
+numwestp6mo <- length(which(artnet2$region == "West" &
+                              artnet2$prep_part6mo == 1))
+num1517p6mo <- length(which(artnet2$age.cat == "15-17" &
+                              artnet2$prep_part6mo == 1))
+num1824p6mo <- length(which(artnet2$age.cat == "18-24" &
+                              artnet2$prep_part6mo == 1))
+num2534p6mo <- length(which(artnet2$age.cat == "25-34" &
+                              artnet2$prep_part6mo == 1))
+num3544p6mo <- length(which(artnet2$age.cat == "35-44" &
+                              artnet2$prep_part6mo == 1))
+num4554p6mo <- length(which(artnet2$age.cat == "45-54" &
+                              artnet2$prep_part6mo == 1))
+num5565p6mo <- length(which(artnet2$age.cat == "55-65" &
+                              artnet2$prep_part6mo == 1))
 
 # Column 5 - Not in a monogamous relationship with a HIV-negative partner
 numnonmonog <- length(which(artnet2$prep_nonmonog == 1))
-numwhitenonmonog <- length(which(artnet2$race.cat == "white" & artnet2$prep_nonmonog == 1))
-numblacknonmonog <- length(which(artnet2$race.cat == "black" & artnet2$prep_nonmonog == 1))
-numhispnonmonog <- length(which(artnet2$race.cat == "hispanic" & artnet2$prep_nonmonog == 1))
-numothernonmonog <- length(which(artnet2$race.cat == "other" & artnet2$prep_nonmonog == 1))
-numnenonmonog <- length(which(artnet2$region == "Northeast" & artnet2$prep_nonmonog == 1))
-nummwnonmonog <- length(which(artnet2$region == "Midwest" & artnet2$prep_nonmonog == 1))
-numsouthnonmonog <- length(which(artnet2$region == "South" & artnet2$prep_nonmonog == 1))
-numwestnonmonog <- length(which(artnet2$region == "West" & artnet2$prep_nonmonog == 1))
-num1517nonmonog <- length(which(artnet2$age.cat == "15-17" & artnet2$prep_nonmonog == 1))
-num1824nonmonog <- length(which(artnet2$age.cat == "18-24" & artnet2$prep_nonmonog == 1))
-num2534nonmonog <- length(which(artnet2$age.cat == "25-34" & artnet2$prep_nonmonog == 1))
-num3544nonmonog <- length(which(artnet2$age.cat == "35-44" & artnet2$prep_nonmonog == 1))
-num4554nonmonog <- length(which(artnet2$age.cat == "45-54" & artnet2$prep_nonmonog == 1))
-num5565nonmonog <- length(which(artnet2$age.cat == "55-65" & artnet2$prep_nonmonog == 1))
+numwhitenonmonog <- length(which(artnet2$race.cat == "white" &
+                                   artnet2$prep_nonmonog == 1))
+numblacknonmonog <- length(which(artnet2$race.cat == "black" &
+                                   artnet2$prep_nonmonog == 1))
+numhispnonmonog <- length(which(artnet2$race.cat == "hispanic" &
+                                  artnet2$prep_nonmonog == 1))
+numothernonmonog <- length(which(artnet2$race.cat == "other" &
+                                   artnet2$prep_nonmonog == 1))
+numnenonmonog <- length(which(artnet2$region == "Northeast" &
+                                artnet2$prep_nonmonog == 1))
+nummwnonmonog <- length(which(artnet2$region == "Midwest" &
+                                artnet2$prep_nonmonog == 1))
+numsouthnonmonog <- length(which(artnet2$region == "South" &
+                                   artnet2$prep_nonmonog == 1))
+numwestnonmonog <- length(which(artnet2$region == "West" &
+                                  artnet2$prep_nonmonog == 1))
+num1517nonmonog <- length(which(artnet2$age.cat == "15-17" &
+                                  artnet2$prep_nonmonog == 1))
+num1824nonmonog <- length(which(artnet2$age.cat == "18-24" &
+                                  artnet2$prep_nonmonog == 1))
+num2534nonmonog <- length(which(artnet2$age.cat == "25-34" &
+                                  artnet2$prep_nonmonog == 1))
+num3544nonmonog <- length(which(artnet2$age.cat == "35-44" &
+                                  artnet2$prep_nonmonog == 1))
+num4554nonmonog <- length(which(artnet2$age.cat == "45-54" &
+                                  artnet2$prep_nonmonog == 1))
+num5565nonmonog <- length(which(artnet2$age.cat == "55-65" &
+                                  artnet2$prep_nonmonog == 1))
 
 # Column 6 - Recent CAI
 numcai <- length(which(artnet2$prep_uai == 1))
@@ -138,20 +194,48 @@ num5565sti <- length(which(artnet2$age.cat == "55-65" & artnet2$prep_sti == 1))
 
 # Column 8 - Sexually active, HIV-negative denominator
 numprepdenom <- length(which(artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-numwhiteprepdenom <- length(which(artnet2$race.cat == "white" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-numblackprepdenom <- length(which(artnet2$race.cat == "black" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-numhispprepdenom <- length(which(artnet2$race.cat == "hispanic" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-numotherprepdenom <- length(which(artnet2$race.cat == "other" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-numneprepdenom <- length(which(artnet2$region == "Northeast" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-nummwprepdenom <- length(which(artnet2$region == "Midwest" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-numsouthprepdenom <- length(which(artnet2$region == "South" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-numwestprepdenom <- length(which(artnet2$region == "West" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-num1517prepdenom <- length(which(artnet2$age.cat == "15-17" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-num1824prepdenom <- length(which(artnet2$age.cat == "18-24" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-num2534prepdenom <- length(which(artnet2$age.cat == "25-34" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-num3544prepdenom <- length(which(artnet2$age.cat == "35-44" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-num4554prepdenom <- length(which(artnet2$age.cat == "45-54" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
-num5565prepdenom <- length(which(artnet2$age.cat == "55-65" & artnet2$prep_part12mo == 1 & artnet2$prep_hiv == 1))
+numwhiteprepdenom <- length(which(artnet2$race.cat == "white" &
+                                    artnet2$prep_part12mo == 1 &
+                                    artnet2$prep_hiv == 1))
+numblackprepdenom <- length(which(artnet2$race.cat == "black" &
+                                    artnet2$prep_part12mo == 1 &
+                                    artnet2$prep_hiv == 1))
+numhispprepdenom <- length(which(artnet2$race.cat == "hispanic" &
+                                   artnet2$prep_part12mo == 1 &
+                                   artnet2$prep_hiv == 1))
+numotherprepdenom <- length(which(artnet2$race.cat == "other" &
+                                    artnet2$prep_part12mo == 1 &
+                                    artnet2$prep_hiv == 1))
+numneprepdenom <- length(which(artnet2$region == "Northeast" &
+                                 artnet2$prep_part12mo == 1 &
+                                 artnet2$prep_hiv == 1))
+nummwprepdenom <- length(which(artnet2$region == "Midwest" &
+                                 artnet2$prep_part12mo == 1 &
+                                 artnet2$prep_hiv == 1))
+numsouthprepdenom <- length(which(artnet2$region == "South" &
+                                    artnet2$prep_part12mo == 1 &
+                                    artnet2$prep_hiv == 1))
+numwestprepdenom <- length(which(artnet2$region == "West" &
+                                   artnet2$prep_part12mo == 1 &
+                                   artnet2$prep_hiv == 1))
+num1517prepdenom <- length(which(artnet2$age.cat == "15-17" &
+                                   artnet2$prep_part12mo == 1 &
+                                   artnet2$prep_hiv == 1))
+num1824prepdenom <- length(which(artnet2$age.cat == "18-24" &
+                                   artnet2$prep_part12mo == 1 &
+                                   artnet2$prep_hiv == 1))
+num2534prepdenom <- length(which(artnet2$age.cat == "25-34" &
+                                   artnet2$prep_part12mo == 1 &
+                                   artnet2$prep_hiv == 1))
+num3544prepdenom <- length(which(artnet2$age.cat == "35-44" &
+                                   artnet2$prep_part12mo == 1 &
+                                   artnet2$prep_hiv == 1))
+num4554prepdenom <- length(which(artnet2$age.cat == "45-54" &
+                                   artnet2$prep_part12mo == 1 &
+                                   artnet2$prep_hiv == 1))
+num5565prepdenom <- length(which(artnet2$age.cat == "55-65" &
+                                   artnet2$prep_part12mo == 1 &
+                                   artnet2$prep_hiv == 1))
 
 # Summary Table ---------------
 # Column 1 - Overall, row %
@@ -379,33 +463,47 @@ sti <- rbind(paste0(numsti, " (",
 sexacthivnegdenom <- rbind(paste0(numprepdenom, " (",
                                   round(100 * numprepdenom / num, 1), ")"),
                            paste0(numwhiteprepdenom, " (",
-                                  round(100 * numwhiteprepdenom / numwhite, 1), ")"),
+                                  round(100 * numwhiteprepdenom / numwhite, 1),
+                                  ")"),
                            paste0(numblackprepdenom, " (",
-                                  round(100 * numblackprepdenom / numblack, 1), ")"),
+                                  round(100 * numblackprepdenom / numblack, 1),
+                                  ")"),
                            paste0(numhispprepdenom, " (",
-                                  round(100 * numhispprepdenom / numhisp, 1), ")"),
+                                  round(100 * numhispprepdenom / numhisp, 1),
+                                  ")"),
                            paste0(numotherprepdenom, " (",
-                                  round(100 * numotherprepdenom / numother, 1), ")"),
+                                  round(100 * numotherprepdenom / numother, 1),
+                                  ")"),
                            paste0(numneprepdenom, " (",
-                                  round(100 * numneprepdenom / numne, 1), ")"),
+                                  round(100 * numneprepdenom / numne, 1),
+                                  ")"),
                            paste0(nummwprepdenom, " (",
-                                  round(100 * nummwprepdenom / nummw, 1), ")"),
+                                  round(100 * nummwprepdenom / nummw, 1),
+                                  ")"),
                            paste0(numsouthprepdenom, " (",
-                                  round(100 * numsouthprepdenom / numsouth, 1), ")"),
+                                  round(100 * numsouthprepdenom / numsouth, 1),
+                                  ")"),
                            paste0(numwestprepdenom, " (",
-                                  round(100 * numwestprepdenom / numwest, 1), ")"),
+                                  round(100 * numwestprepdenom / numwest, 1),
+                                  ")"),
                            paste0(num1517prepdenom, " (",
-                                  round(100 * num1517prepdenom / num1517, 1), ")"),
+                                  round(100 * num1517prepdenom / num1517, 1),
+                                  ")"),
                            paste0(num1824prepdenom, " (",
-                                  round(100 * num1824prepdenom / num1824, 1), ")"),
+                                  round(100 * num1824prepdenom / num1824, 1),
+                                  ")"),
                            paste0(num2534prepdenom, " (",
-                                  round(100 * num2534prepdenom / num2534, 1), ")"),
+                                  round(100 * num2534prepdenom / num2534, 1),
+                                  ")"),
                            paste0(num3544prepdenom, " (",
-                                  round(100 * num3544prepdenom / num3544, 1), ")"),
+                                  round(100 * num3544prepdenom / num3544, 1),
+                                  ")"),
                            paste0(num4554prepdenom, " (",
-                                  round(100 * num4554prepdenom / num4554, 1), ")"),
+                                  round(100 * num4554prepdenom / num4554, 1),
+                                  ")"),
                            paste0(num5565prepdenom, " (",
-                                  round(100 * num5565prepdenom / num5565, 1), ")"))
+                                  round(100 * num5565prepdenom / num5565, 1),
+                                  ")"))
 
 Table2 <- cbind(respondents, adultmen, hivneg, past6mos, nonmonog,
                      CAI, sti, sexacthivnegdenom)
