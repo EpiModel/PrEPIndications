@@ -2,21 +2,96 @@
 ## Cleaning Script    ##
 ## 2019-06-06         ##
 
-
 # Package and setup -----------------------
 rm(list = ls())
+
+## Install ART-Net Data Package
+# remotes::install_github("EpiModel/ARTnetData", ref = "f07ba02", force = TRUE)
+
 library(dplyr)
 library(tidyr)
 library(readxl)
 library(MASS)
 library(haven)
 library(tidyverse)
+library(ARTnetData)
 
 # Read in datasets
-artnet <- readRDS("Input/artnet4shiny.rda")
-artnetLong <- readRDS("Input/artnetlong4shiny.rda")
+artnet <- ARTnetData::ARTnet.wide
+artnetLong <- ARTnetData::ARTnet.long
 artnet2 <- artnet
 
+
+# Variables --------------------------------------------------------------------
+# Make HIV Status categorical variable
+artnet2$hivstatus <- rep(NA, nrow(artnet2))
+artnet2$hivstatus[which(artnet2$hiv3 == 0)] <- "Negative"
+artnet2$hivstatus[which(artnet2$hiv3 == 1)] <- "Positive"
+artnet2$hivstatus[which(artnet2$hiv3 == 2)] <- "Unknown"
+
+# Make Region a categorical variable
+artnet2$region <- rep(NA, nrow(artnet2))
+artnet2$region[which(artnet2$REGCODE == 1)] <- "Northeast"
+artnet2$region[which(artnet2$REGCODE == 2)] <- "Midwest"
+artnet2$region[which(artnet2$REGCODE == 3)] <- "South"
+artnet2$region[which(artnet2$REGCODE == 4)] <- "West"
+
+# Age category
+artnet2$age.cat <- rep(NA, nrow(artnet))
+artnet2$age.cat[artnet2$age >= 15 & artnet$age <= 24] <- "15-24"
+artnet2$age.cat[artnet2$age >= 25 & artnet$age <= 34] <- "25-34"
+artnet2$age.cat[artnet2$age >= 35 & artnet$age <= 44] <- "35-44"
+artnet2$age.cat[artnet2$age >= 45 & artnet$age <= 54] <- "45-54"
+artnet2$age.cat[artnet2$age >= 55 & artnet$age <= 65] <- "55-65"
+artnet2$age.cat[artnet2$age > 65] <- "66+"
+
+# Partner HIV status
+artnetLong$partstatus <- rep(NA, nrow(artnetLong))
+artnetLong$partstatus[artnetLong$p_hiv == 2] <- "Unknown"
+artnetLong$partstatus[artnetLong$p_hiv == 1] <- "Positive"
+artnetLong$partstatus[artnetLong$p_hiv == 0] <- "Negative"
+
+# Calculate total degree
+# Create mean degree variable
+l <- artnetLong
+l$ONGOING <- as.numeric(l$ONGOING)
+l$ongoing2 <- ifelse(l$ONGOING %in% c(88, 99), 0, l$ONGOING)
+l$ongoing2[which(is.na(l$ONGOING))] <- 0
+l$ONGOING <- NULL
+
+# Total
+df <- l %>%
+  filter(RAI == 1 | IAI == 1 | ROI == 1 | IOI == 1) %>% # filter activity type
+  filter(ptype %in% 1:2) %>% # filter partnership type
+  group_by(AMIS_ID) %>%
+  summarise(totdegree = sum(ongoing2))
+df4 <- l %>%
+  filter(RAI == 1 | IAI == 1 | ROI == 1 | IOI == 1) %>% # filter activity type
+  filter(ptype == 1) %>% # filter partnership type
+  group_by(AMIS_ID) %>%
+  summarise(maintotdegree = sum(ongoing2))
+df7 <- l %>%
+  filter(RAI == 1 | IAI == 1 | ROI == 1 | IOI == 1) %>%
+  # filter(p_RAI == 1 | p_IAI == 1) %>% # filter activity type
+  filter(ptype == 2) %>%
+  # filter(ptype %in% 1) %>% # filter partnership type
+  group_by(AMIS_ID) %>%
+  summarise(castotdegree = sum(ongoing2))
+
+# Create merged dataframes
+artnet2 <- left_join(artnet2, df, by = "AMIS_ID")
+artnet2 <- left_join(artnet2, df4, by = "AMIS_ID")
+artnet2 <- left_join(artnet2, df7, by = "AMIS_ID")
+table(artnet2$totdegree, useNA = "always")
+table(artnet2$maintotdegree, useNA = "always")
+table(artnet2$castotdegree, useNA = "always")
+
+# If missing degree values, then set to 0
+artnet2$totdegree <- ifelse(is.na(artnet2$totdegree), 0, artnet2$totdegree)
+artnet2$maintotdegree <- ifelse(is.na(artnet2$maintotdegree), 0, artnet2$maintotdegree)
+artnet2$castotdegree <- ifelse(is.na(artnet2$castotdegree), 0, artnet2$castotdegree)
+
+# Indications ------------------------------------------------------------------
 # Set up individual components of indications
 artnet2$prep_part12mo <- rep(0, nrow(artnet))
 artnet2$prep_part6mo <- rep(0, nrow(artnet))

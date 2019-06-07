@@ -1,6 +1,7 @@
 ## Analysis Wrapper
+
 ## Install ART-Net Data Package
-# remotes::install_github("EpiModel/ARTnetData", ref = "f07ba02")
+remotes::install_github("EpiModel/ARTnetData", ref = "f07ba02", force = TRUE)
 
 ## Table 2
 source("Analyses/Table 2.R", echo = TRUE)
