@@ -172,9 +172,9 @@ figure1 <- ggplot(data = prep, aes(x = Age.Cat, y = indpct, fill = Race.Cat)) +
   geom_bar(stat = "identity", position = "dodge", color = "black") +
   geom_errorbar(aes(ymin = pctLCI, ymax = pctUCI), width = .2,
                 position = position_dodge(.9)) +
-  ylab("Percent Eligible for PrEP") +
+  ylab("Percent Indicated for PrEP") +
   xlab("Age Category") +
-  labs(title = ("Percent of Sexually Active, HIV-Negative MSM Eligible for PrEP \n by Race/Ethnicity and Age")) +
+  #labs(title = ("Percent of Sexually Active, HIV-Negative MSM Eligible for PrEP \n by Race/Ethnicity and Age")) +
   ylim(0, 100) +
   geom_hline(yintercept = 24.7, linetype = "solid",
              color = "red", size = 1) +
